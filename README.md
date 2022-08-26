@@ -1,6 +1,6 @@
 .............................................   Sorting Visualiser   (RC @May 2, 2022) .........................................
 
-# A modular Sorting Algorithms visualizer
+# A modular Sorting Algorithms visualiser
 
 1. Many Sorting Algorithms supported (listed below)
 2. Colorful visualisation with many customisations
