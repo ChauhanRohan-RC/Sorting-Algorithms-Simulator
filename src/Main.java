@@ -1,5 +1,6 @@
-import Util.Util;
-import com.jogamp.newt.opengl.GLWindow;
+import util.Pair;
+import util.Util;
+
 import gl.GLConfig;
 import models.AbsMain;
 import models.Data;
@@ -7,12 +8,10 @@ import models.sorter.SorterI;
 import models.sorter.SorterType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
 import processing.event.KeyEvent;
 import processing.opengl.PJOGL;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.Map;
 import java.util.Scanner;
@@ -27,6 +26,8 @@ public class Main extends AbsMain implements Data.Listener {
     private static final String DES_ALGORITHMS = SorterType.createKeyInstructions(".....", "\n");
     private static final String DES_TO_DISPLAY = DES_ALGORITHMS + "\n\n" + DES_CONTROLS;
     private static final String DES_TITLE = "Controls [Ctrl-C]";
+
+//    private static final String README_INSTRUCTIONS =
 
 
 
@@ -193,13 +194,13 @@ public class Main extends AbsMain implements Data.Listener {
             textAlign(LEFT, TOP);
             textSize(getTextSize(GLConfig.TEXT_SIZE_CONTROLS_DES));
 
-            final float desW;
-            if (mControlsDesWidthFactor < 0) {
-                desW = textWidth(DES_TO_DISPLAY);
-                mControlsDesWidthFactor = desW / width;
-            } else {
-                desW = mControlsDesWidthFactor * width;
-            }
+            final float desW = textWidth(DES_TO_DISPLAY);
+//            if (mControlsDesWidthFactor < 0) {
+//                desW = textWidth(DES_TO_DISPLAY);
+//                mControlsDesWidthFactor = desW / width;
+//            } else {
+//                desW = mControlsDesWidthFactor * width;
+//            }
 
             final float boxW = desW + hudRightPad * 3;
             final float boxc = hudTopPad;
@@ -576,10 +577,10 @@ public class Main extends AbsMain implements Data.Listener {
     /* ......................................... SHELL ...........................................*/
 
     public static final String DES_SHELL_ALGORITHMS = "# ALGORITHMS [key -> algorithm]\n  " + SorterType.createKeyInstructions(" -> ", "\n  ");
-    public static final String DES_SHELL_COMMANDS = "# COMMANDS\n -> algo [key] -> set sorting algorithm\n -> size [+/-/count] : increase/decrease/set data size\n -> speed [+/-/percent] : increase/decrease/set sorting speed\n -> invert : Invert sorting order\n -> reset [f] : Reset [force reset]\n -> theme : toggle ui theme [LIGHT/DARK]\n -> start/resume : start/resume sorting\n -> pause : pause sorting\n ->  stop : stop sorting\n -> exit/quit : quit\n";
-    public static final String SHELL_INSTRUCTIONS = "\n............................. RC SORT .. ..............................\n\n" + DES_SHELL_ALGORITHMS + "\n\n\n" + DES_SHELL_COMMANDS;
+    public static final String DES_SHELL_COMMANDS = "# COMMANDS\n -> algo [key] -> set sorting algorithm\n -> size [+/-/count] : increase/decrease/set data size\n -> speed [+/-/percent] : increase/decrease/set sorting speed\n -> invert : Invert sorting order\n -> reset [f] : Reset [force reset]\n -> theme : toggle ui theme [LIGHT/DARK]\n -> start/resume : start/resume sorting\n -> pause : pause sorting\n -> stop : stop sorting\n -> exit/quit : quit\n";
+    public static final String SHELL_INSTRUCTIONS = "\n..... " + R.APP_NAME + " ......\n\n" + DES_SHELL_ALGORITHMS + "\n\n\n" + DES_SHELL_COMMANDS;
 
-    public static final String SHELL_ROOT_NS = "cube:RC";       // Name Space
+    public static final String SHELL_ROOT_NS = "sort";       // Name Space
 
     @NotNull
     public static String shellPath(@Nullable String child) {
@@ -741,7 +742,11 @@ public class Main extends AbsMain implements Data.Listener {
     }
 
     public static void main(String[] args) {
+//        createReadme();
+
         startMain(args);
 //        testMain(args);
+
+
     }
 }

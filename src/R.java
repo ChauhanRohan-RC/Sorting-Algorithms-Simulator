@@ -1,4 +1,4 @@
-import Util.Util;
+import util.Util;
 import gl.GLConfig;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -31,7 +31,7 @@ public class R {
 //    public static final Path FONT_PD_SANS_MEDIUM = DIR_FONT.resolve("product_sans_medium.ttf");
 
 
-    public static final String APP_NAME = "RC Sort";
+    public static final String APP_NAME = "Sorting Algorithms Simulator";
 
     @NotNull
     public static String getDataSizeText(int dataSize) {

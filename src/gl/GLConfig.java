@@ -1,6 +1,6 @@
 package gl;
 
-import Util.Util;
+import util.Util;
 import org.jetbrains.annotations.NotNull;
 import processing.core.PApplet;
 

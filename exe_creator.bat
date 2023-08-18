@@ -1,0 +1,1 @@
+jpackage --name "RC Sort" --input "out\artifacts\SortingGl_jar" --main-jar SortingGl.jar --main-class Main --icon "out\artifacts\SortingGl_jar\res\image\icon.ico" --win-console --win-dir-chooser
